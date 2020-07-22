@@ -91,6 +91,8 @@ int main(int argc, char **argv)
   g_signal_connect(G_OBJECT(butt.generate_button), "clicked", G_CALLBACK(on_generate_button_clicked), NULL);
   g_signal_connect(G_OBJECT(butt.to_clipboard_button), "clicked", G_CALLBACK(on_clipboard_button_clicked), NULL);
   g_signal_connect(G_OBJECT(butt.clear_clipboard_button), "clicked", G_CALLBACK(on_clear_clipboard_button_clicked), NULL);
+  g_signal_connect(G_OBJECT(cllr.digits_check_button), "toggled", G_CALLBACK(on_digits_check_button_toggled), NULL);
+  g_signal_connect(G_OBJECT(cllr.symbols_check_button), "toggled", G_CALLBACK(on_symbols_check_button_toggled), NULL);
 
   gtk_main();
 
