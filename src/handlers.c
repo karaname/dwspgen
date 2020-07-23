@@ -5,23 +5,24 @@
 
 static char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-void remove_substr(char *substr) {
-  char *match = alpha;
+void remove_substr(char *substr)
+{
+  int len_alpha = strlen(alpha);
   int len_sub = strlen(substr);
 
-  /* ??? */
-  while ((match = strstr(match, substr))) {
-    *match = '\0';
-    strcat(alpha, match);
+  for (int i = 0; i < len_alpha; i++) {
+    for (int j = 0; j < len_sub; j++) {
+      if (alpha[i] == substr[j]) {
+        memmove(&alpha[i], &alpha[i + 1], len_alpha - i);
+      }
+    }
   }
 }
 
 void generate(char *s, int len)
 {
-  printf("%s\n", alpha);
   int index;
   srand(time(NULL));
-
   for (index = 0; index < len; index++) {
     s[index] = alpha[rand() % (strlen(alpha))];
   }
