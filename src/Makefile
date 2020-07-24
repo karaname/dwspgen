@@ -1,8 +1,6 @@
-OBJECTS=obj/main.o obj/handlers.o
 PKG_CONFIG=`pkg-config --cflags --libs gtk+-3.0`
-
+OBJECTS=obj/main.o obj/handlers.o
 LVLDB=-g3
-
 SRCDIR=src
 OBJDIR=obj
 BIN_NAME=dwspgen
